@@ -10,13 +10,13 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key); // Key puede ser nulo
+  MyApp({Key? key}) : super(key: key); 
 
   @override
-  _MyAppState createState() => _MyAppState(); // Nombre corregido
+  _MyAppState createState() => _MyAppState(); 
 }
 
-class _MyAppState extends State<MyApp> { // Especificar tipo <MyApp>
+class _MyAppState extends State<MyApp> { 
   final LoginData _loginData = LoginData();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   
@@ -38,8 +38,8 @@ class _MyAppState extends State<MyApp> { // Especificar tipo <MyApp>
 class Formulario extends StatelessWidget{
   const Formulario({
     Key? key, // Key puede ser nulo
-    required GlobalKey<FormState> formKey, // Usar required en lugar de @required
-    required LoginData loginData, // Usar required
+    required GlobalKey<FormState> formKey, 
+    required LoginData loginData, 
   }) : _formKey = formKey, _loginData = loginData, super(key: key);
 
   final GlobalKey<FormState> _formKey;
@@ -54,13 +54,13 @@ class Formulario extends StatelessWidget{
         children: [
           TextFormField(
             keyboardType: TextInputType.emailAddress,
-            validator: (String? inValue){ // Valor puede ser nulo
+            validator: (String? inValue){ 
               if (inValue == null || inValue.isEmpty){
                 return 'Introduce nombre de usuario: ';
               }
               return null;
             },
-            onSaved: (String? inValue) { // Valor puede ser nulo
+            onSaved: (String? inValue) { 
               _loginData.username = inValue ?? '';
             },
             decoration: const InputDecoration(
