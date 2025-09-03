@@ -56,7 +56,7 @@ class Formulario extends StatelessWidget{
             keyboardType: TextInputType.emailAddress,
             validator: (String? inValue){ // Valor puede ser nulo
               if (inValue == null || inValue.isEmpty){
-                return 'Introduce nombre de usuario';
+                return 'Introduce nombre de usuario: ';
               }
               return null;
             },
